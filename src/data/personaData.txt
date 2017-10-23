@@ -1,0 +1,251 @@
+Fool
+1	Arsene	2	2	2	3	1	-	-	-	wk	-	-	-	-	wk	rs
+8	Obariyon	7	3	9	8	4	rs	-	-	-	wk	-	-	-	-	-
+16	High Pixie	8	14	10	13	10	-	wk	-	-	rs	rs	-	wk	-	-
+20	Izanagi	14	13	13	14	13	-	-	-	-	rs	wk	-	-	-	nu	y
+23	Izanagi Picaro	16	15	15	16	14	-	-	-	-	nu	wk	-	-	-	nu	y
+26	Orpheus	17	17	17	17	17	-	-	-	-	wk	-	-	-	rs	wk	y
+29	Orpheus Picaro	19	19	19	19	18	-	-	-	-	wk	-	-	-	rs	wk	y
+32	Decarabia	21	23	19	22	18	wk	-	rp	-	-	-	-	rs	-	rs
+38	Legion	24	24	30	23	20	rs	rs	rs	-	-	-	rs	-	wk	nu
+42	Ose	32	24	25	31	21	-	-	rs	-	-	-	-	-	wk	nu
+49	Bugs	35	33	30	32	24	-	-	-	-	-	-	rs	wk	-	nu	Hariti	Pisaca	Pixie
+50	Crystal Skull	50	50	50	50	50	rs	nu	rp	rp	rp	rp	rp	rp	-	rp	t
+61	Dionysus	35	41	38	40	36	-	-	-	-	rp	-	-	-	rs	rs
+67	Black Frost	44	46	41	42	35	-	-	rp	ab	-	-	-	nu	-	rp	King Frost	Jack Frost
+83	Vishnu	56	51	49	57	43	-	-	wk	an	-	-	-	-	nu	nu
+95	Satanael	63	60	57	56	56	rs	rs	rs	rs	rs	rs	rs	rs	nu	ab	Lucifer	Satan	Michael	Ishtar	Anzu	Arsene
+
+Magician
+2	Jack-o'-Lantern	2	3	3	3	2	-	wk	ab	wk	-	wk	-	-	-	-
+11	Jack Frost	8	9	7	9	7	-	-	wk	nu	-	-	-	-	-	-
+17	Nekomata	13	10	12	15	8	-	-	-	-	wk	-	rs	-	-	-
+24	Sandman	11	13	14	20	21	-	-	-	-	wk	rs	-	-	-	-
+28	Choronzon	16	19	19	18	19	-	-	ab	-	-	-	-	-	wk	-
+43	Queen Mab	23	35	26	30	22	-	-	nu	-	rs	wk	-	-	-	-
+48	Rangda	28	34	30	33	26	rp	rp	nu	-	wk	-	-	-	wk	nu
+59	Surt	37	40	39	35	33	-	-	ab	wk	-	-	-	-	-	-
+76	Futsunushi	54	48	47	49	37	rs	-	-	-	-	-	-	wk	-	-
+
+Priestess
+6	Silky	4	7	4	5	5	-	-	wk	rs	wk	-	-	-	-	-
+11	Apsaras	7	11	6	10	6	-	-	-	rs	wk	-	-	-	-	-
+25	Koh-i-Noor	25	25	25	25	25	rs	rs	rs	rs	rs	rs	rs	-	nu	nu	t
+26	Isis	15	21	16	18	15	-	-	-	-	-	-	wk	-	nu	nu
+40	Kikuri-Hime	22	31	24	28	22	-	-	wk	-	-	nu	-	-	rs	-
+45	Scathach	29	30	28	30	25	-	-	-	rp	-	-	-	-	-	nu
+50	Sarasvati	30	35	32	33	27	-	-	-	nu	rs	-	-	wk	-	-
+55	Skadi	35	39	34	34	30	-	-	-	rp	-	-	-	-	-	nu
+73	Cybele	44	48	45	51	38	-	-	rs	-	wk	-	-	-	nu	-
+
+Empress
+15	Queen's Necklace	15	15	15	15	15	rs	wk	rs	rs	rs	rs	rs	rs	rs	rs	t
+20	Yaksini	14	11	13	16	13	-	-	-	rs	-	-	-	wk	-	-
+26	Lamia	21	15	18	19	12	-	rs	-	wk	rs	-	-	-	-	nu
+40	Hariti	24	29	25	26	23	-	-	-	-	-	wk	rs	-	rs	-
+50	Dakini	34	32	34	28	29	-	-	rs	-	-	-	-	-	-	-
+56	Titania	32	40	35	38	30	-	-	-	-	-	-	wk	rs	rs	rs
+77	Kali	53	45	46	53	41	-	-	nu	-	-	-	rp	-	-	rs
+80	Mother Harlot	55	48	46	49	49	-	-	-	-	rp	-	-	-	wk	nu
+
+Emperor
+10	Regent	10	10	10	10	10	rs	rs	rs	rs	rs	rs	wk	wk	nu	nu	t
+16	Eligor	12	10	13	10	10	-	rs	rs	-	wk	-	-	-	-	-
+28	Setanta	20	17	19	18	17	-	-	-	-	-	-	wk	rs	-	-
+36	Thoth	21	28	21	24	21	-	-	-	-	-	-	wk	nu	nu	-
+44	Okuninushi	30	28	29	28	24	-	-	-	-	rp	wk	nu	wk	-	-
+52	Barong	33	35	33	37	25	-	rs	-	-	rs	wk	-	-	nu	wk
+61	King Frost	38	39	45	33	35	-	-	-	ab	-	-	-	-	nu	-
+66	Oberon	40	44	43	43	35	-	-	-	-	rs	-	nu	wk	-	-
+75	Baal	48	50	47	47	40	-	-	rs	-	-	ab	-	-	rs	rs
+82	Odin	53	52	54	52	42	-	-	-	-	nu	ab	-	-	rp	rp
+
+Hierophant
+9	Berith	8	6	7	8	5	-	nu	rs	wk	-	-	-	-	-	-
+17	Orobas	11	14	15	12	6	-	-	-	-	-	rs	-	-	wk	rs
+22	Phoenix	14	15	15	18	11	-	-	-	rs	wk	nu	-	-	-	-
+25	Anzu	14	18	15	21	14	-	wk	-	-	rs	rp	-	wk	-	-
+39	Unicorn	20	27	25	28	24	-	-	-	nu	-	-	rs	-	nu	wk
+42	Daisoujou	22	33	24	25	29	-	rs	-	-	-	-	-	-	nu	wk
+63	Forneus	41	39	40	42	34	-	-	-	ab	wk	-	nu	-	-	-
+67	Bishamonten	49	37	42	45	35	-	-	ab	wk	-	-	-	-	rs	rs
+76	Kohryu	43	51	50	53	38	-	-	-	-	rp	-	wk	nu	nu	-	Seiryu	Byakko	Suzaku	Genbu
+
+Lovers
+2	Pixie	1	3	3	4	2	-	wk	-	wk	rs	-	-	-	rs	wk
+6	Saki Mitama	4	6	5	6	4	-	-	-	rs	wk	-	-	-	-	-
+19	Leanan Sidhe	9	17	12	16	10	-	-	wk	-	-	rs	rs	-	-	-
+29	Ame-no-Uzume	15	22	19	20	18	-	-	ab	-	-	-	wk	-	-	-
+42	Kushinada-Hime	24	30	26	28	25	-	-	-	-	-	-	-	wk	rp	-
+50	Narcissus	27	36	29	35	30	-	-	wk	-	nu	rs	-	-	rs	-
+56	Parvati	33	39	33	39	31	-	-	-	rp	-	-	rs	-	rs	wk
+78	Raphael	57	45	49	55	35	-	-	-	ab	-	-	nu	-	nu	-
+85	Ishtar	48	59	49	58	48	-	-	-	-	nu	wk	-	-	-	-
+
+Chariot
+3	Agathion	3	4	5	7	3	-	rs	-	-	rs	wk	-	-	-	-
+10	Slime	9	6	11	6	5	rs	-	wk	-	-	wk	-	-	-	-
+16	Shiisaa	13	9	12	13	8	rs	rs	-	-	-	-	-	-	nu	wk
+21	Shiki-Ouji	11	15	16	16	13	nu	nu	-	-	-	-	-	wk	-	nu
+25	Kin-Ki	21	13	21	15	12	rs	rs	-	-	-	-	wk	-	-	-
+31	Ara Mitama	20	19	20	20	21	rs	-	-	wk	-	-	-	-	-	-
+39	White Rider	24	24	25	26	25	-	-	nu	wk	-	-	-	-	nu	rp
+55	Cerberus	39	35	32	39	27	-	-	ab	wk	-	-	-	rs	-	-
+64	Thor	44	39	43	38	35	rs	-	-	-	ab	-	wk	-	rs	rs
+86	Chi You	54	56	53	52	50	rs	rs	-	-	-	-	nu	wk	-	-	Yoshitsune	Cu Chulainn	Hecatoncheires	White Rider
+
+Justice
+12	Angel	7	9	9	9	9	-	-	-	-	rs	-	-	-	nu	wk
+16	Archangel	13	10	13	12	7	-	-	-	-	wk	-	-	-	nu	wk
+29	Principality	17	19	18	21	19	-	-	rs	-	-	-	-	-	nu	wk
+41	Power	30	26	28	25	21	-	wk	-	-	-	rs	-	-	nu	wk
+60	Melchizedek	37	38	41	39	32	-	-	-	-	-	wk	rs	-	ab	nu
+68	Dominion	46	47	45	48	40	-	wk	-	-	-	-	-	rp	nu	rs
+71	Throne	42	49	47	46	36	-	-	ab	-	-	-	-	rs	nu	wk	Dominion	Melchizedek	Power
+81	Uriel	50	54	49	55	42	-	-	nu	-	-	-	-	ab	rp	-
+89	Metatron	54	61	60	57	42	-	-	-	-	wk	rp	ab	ab	-	wk	Michael	Sandalphon	Dominion	Melchizedek	Power	Principality
+
+Hermit
+4	Bicorn	5	3	3	5	3	-	-	-	-	wk	-	-	-	-	rs
+9	Koropokkuru	5	8	6	9	6	-	rs	wk	rs	-	rs	-	-	-	-
+13	Ippon-Datara	11	7	14	6	8	-	-	rs	wk	-	rp	-	-	rs	rs
+17	Sudama	9	14	12	13	10	-	-	-	wk	-	rp	-	wk	-	-
+24	Naga	15	17	15	17	15	-	-	-	-	nu	wk	-	-	-	-
+35	Arahabaki	21	23	22	24	22	rp	rp	-	-	-	-	wk	wk	rs	rs
+42	Kumbhanda	37	32	34	31	25	-	-	nu	wk	-	-	-	-	-	rs
+49	Koumokuten	37	32	34	31	25	rs	-	-	wk	-	-	-	-	rs	-
+56	Kurama Tengu	34	38	34	42	27	-	-	-	wk	-	rp	-	-	rs	rs
+75	Ongyo-Ki	56	42	47	48	39	rs	rs	-	-	-	-	-	-	rp	rp
+
+Fortune
+20	Stone of Scone	20	20	20	20	20	nu	nu	nu	nu	nu	nu	nu	nu	nu	wk	t
+26	Clotho	14	19	17	20	15	-	-	-	wk	-	nu	-	wk	-	-
+30	Ariadne	23	19	20	17	18	-	rs	-	-	-	-	wk	nu	rs	-	y
+34	Lachesis	18	25	22	25	19	-	-	-	nu	wk	rs	-	-	-	-
+39	Atropos	23	30	22	27	22	-	-	wk	-	-	nu	-	-	-	-
+42	Ariadne Picaro	36	23	29	24	21	-	rs	-	-	-	-	wk	nu	rs	-	y
+46	Fortuna	23	32	29	34	27	-	-	nu	-	wk	nu	-	-	-	-
+52	Norn	30	38	33	34	28	-	-	-	rs	-	ab	-	-	-	-
+56	Asterius	43	43	32	32	25	-	-	rs	wk	-	-	rs	-	-	nu	y
+62	Asterius Picaro	46	46	36	36	29	-	-	rs	wk	-	-	rs	-	-	nu	y
+69	Lakshmi	40	47	43	46	38	-	-	wk	rs	-	-	-	-	rs	-
+
+Strength
+6	Kelpie	5	5	5	6	4	-	-	-	rs	wk	-	-	-	-	-
+14	Kusi Mitama	8	12	11	9	9	-	-	wk	-	-	rs	-	-	-	-
+19	Oni	17	8	16	13	10	rs	rs	-	-	-	-	-	-	-	-
+24	Rakshasa	20	15	18	17	9	rs	-	rs	-	-	wk	-	-	wk	rs
+30	Orlov	30	30	30	30	30	rs	nu	nu	nu	-	wnu	nu	nu	nu	nu	t
+31	Zouchouten	22	19	24	18	17	rs	-	-	-	-	wk	-	-	-	-
+44	Valkyrie	33	24	28	29	25	-	rs	-	-	-	-	-	-	nu	-
+69	Siegfried	51	37	47	48	31	nu	-	-	rs	-	-	-	wk	-	-
+80	Zaou-Gongen	57	45	50	56	39	-	-	rp	-	wk	-	-	-	nu	nu
+
+Hanged Man
+9	Hua Po	4	10	4	8	8	-	wk	rp	wk	-	-	-	-	-	-
+14	Inugami	11	9	9	12	8	-	-	nu	-	-	wk	-	-	-	nu
+21	Orthus	16	14	14	19	7	-	-	ab	wk	-	-	-	rs	-	-
+29	Take-Minakata	20	22	21	18	13	-	-	-	-	rp	-	wk	-	-	rs
+35	Emperor's Amulet	35	35	35	35	35	rs	nu	-	ab	ab	ab	ab	ab	nu	nu	t
+42	Hecatoncheires	29	25	30	25	24	-	rs	-	-	-	-	-	-	wk	nu
+60	Moloch	32	45	42	31	37	-	-	rp	wk	rs	rs	ab	-	-	nu
+68	Vasuki	31	46	45	42	37	-	-	-	nu	nu	-	-	-	-	wk	Raja Naga	Ananta	Naga
+82	Attis	56	50	48	51	48	-	-	nu	-	-	rp	-	-	-	wk
+
+Death
+3	Mandrake	2	3	3	4	4	-	-	wk	-	rs	-	-	-	-	-
+9	Mokoi	9	5	6	10	4	-	-	-	-	rs	wk	-	-	-	-
+19	Matador	12	13	12	16	11	-	-	-	-	wk	nu	-	-	-	-
+29	Pisaca	19	21	21	17	16	-	-	wk	-	rs	-	-	-	wk	nu
+39	Hell Biker	26	27	24	30	17	-	-	rp	-	-	rs	-	-	wk	-
+40	Hope Diamond	40	40	40	40	40	rs	nu	rp	rp	rp	-	rp	rp	nu	nu	t
+53	Pale Rider	34	34	33	39	26	-	-	-	-	-	rs	-	-	wk	rp
+62	Chernobog	40	37	39	38	39	-	rs	wk	ab	nu	-	-	-	wk	rp
+65	Thanatos	43	49	41	38	31	rs	-	-	-	-	-	-	-	wk	rp	y
+69	Thanatos Picaro	45	51	43	40	35	rs	-	-	-	-	-	-	-	wk	rp	y
+72	Mot	43	51	48	42	39	-	rs	-	-	ab	wk	-	-	-	rp
+79	Alice	43	59	40	57	45	-	-	-	-	-	-	rs	rs	wk	rp	Belial	Nebiros
+
+Temperance
+7	Genbu	5	6	7	6	4	-	-	-	nu	wk	-	rs	-	-	-
+11	Koppa Tengu	7	8	8	11	6	-	-	-	wk	-	rs	-	-	wk	-
+15	Makami	13	12	8	11	8	-	-	-	-	wk	rs	-	rs	nu	-
+20	Nigi Mitama	12	14	14	15	12	-	-	-	-	wk	-	-	-	rs	rs
+25	Jikokuten	19	12	19	17	15	rs	-	-	-	-	-	-	-	rs	wk
+33	Mithra	19	26	19	24	18	-	-	-	nu	wk	-	-	-	nu	-
+49	Byakko	32	32	31	32	27	-	-	wk	ab	-	-	-	wk	-	rs
+55	Raja Naga	33	37	36	35	31	-	-	-	-	nu	-	-	-	-	-
+62	Seiryu	38	41	43	37	34	-	-	-	rs	-	-	-	wk	-	-
+77	Gabriel	43	51	48	54	42	-	-	-	-	-	-	nu	-	ab	-
+84	Ardha	54	56	55	54	40	rs	-	-	nu	nu	-	-	-	-	-
+
+Devil
+5	Incubus	4	6	4	5	3	-	wk	-	-	rs	-	-	-	wk	-
+10	Andras	5	9	7	10	6	-	wk	wk	rs	-	-	-	-	-	-
+25	Flauros	19	14	18	18	13	-	-	nu	wk	-	rs	-	rs	-	-	Eligor	Andras	Berith
+32	Lilim	17	23	18	25	20	-	wk	-	rs	-	wk	-	-	wk	nu
+43	Pazuzu	29	30	27	26	24	-	-	-	-	-	rs	-	-	wk	nu
+58	Baphomet	34	42	36	38	31	-	-	rs	-	-	-	-	-	wk	nu
+62	Nebiros	39	40	42	36	36	-	-	-	-	-	-	rs	-	wk	rp
+68	Belial	45	41	46	43	36	-	-	-	-	-	-	-	-	-	nu
+84	Beelzebub	55	60	54	56	34	-	-	ab	-	-	-	-	-	wk	rp
+
+Tower
+32	Jatayu	18	21	20	27	17	-	-	-	-	-	ab	wk	-	-	-
+37	Belphegor	25	27	24	23	19	-	-	wk	rs	rs	-	-	rs	-	rp
+41	Red Rider	26	27	25	29	23	-	-	-	-	-	-	-	-	wk	nu
+44	Magatsu-Izanagi	37	35	32	25	10	-	rs	-	-	-	-	-	wk	nu	nu	y
+48	Magatsu-Izanagi Picaro	40	38	35	27	11	-	rs	-	-	-	-	-	wk	nu	nu
+51	Seth	32	35	30	35	28	-	-	rp	-	-	nu	-	-	wk	rs	Horus	Anubis	Thoth	Isis
+59	Black Rider	38	43	37	45	30	-	-	wk	ab	-	-	-	-	rs	rs
+73	Mara	47	46	49	45	39	-	nu	ab	wk	-	-	-	-	rs	rp
+79	Yoshitsune	58	47	45	53	41	nu	-	rs	-	rp	-	-	-	rp	-	Futsunushi	Yatagarasu	Okuninushi	Arahabaki	Shiki-Ouji
+85	Mada	52	51	58	56	45	-	-	ab	wk	-	-	rs	nu	-	-
+
+Star
+11	Kodama	7	11	8	10	4	-	-	wk	rs	-	-	-	-	-	-
+23	Fuu-Ki	14	17	16	15	14	-	-	-	-	wk	ab	-	-	-	-
+30	Neko Shogun	19	20	19	21	18	rs	-	-	-	rs	wk	-	-	nu	rs	Anzu	Sudama	Kodama
+36	Kaiwan	23	26	24	22	20	-	nu	-	-	-	-	nu	wk	-	-
+43	Ananta	24	30	31	26	25	-	-	-	ab	wk	-	-	-	-	-
+52	Garuda	30	36	29	39	29	-	wk	-	-	-	rs	-	-	rp	-
+64	Hanuman	43	38	40	40	38	-	-	-	wk	-	-	rs	-	rs	-
+67	Cu Chulainn	47	36	44	47	34	rs	rs	-	-	wk	rp	-	-	nu	-
+80	Sraosha	47	56	45	56	43	-	-	-	-	ab	-	-	-	rp	wk	Gabriel	Melchizedek	Lilith	Mithras	Mithra
+93	Lucifer	61	59	59	56	51	-	-	-	-	-	-	-	-	wk	-	Satan	Metatron	Trumpeter	Ananta	Anubis
+
+Moon
+7	Succubus	4	7	5	8	4	-	wk	rs	-	-	-	-	-	wk	nu
+12	Onmoraki	9	12	7	10	5	-	wk	rs	-	-	-	-	-	wk	nu
+16	Kaguya	11	15	12	11	6	-	-	wk	-	-	rs	-	-	nu	nu	y
+20	Nue	16	10	17	14	10	-	-	wk	rs	-	-	-	-	-	nu
+24	Sui-Ki	16	15	15	18	15	-	-	-	ab	rs	-	-	wk	-	-
+25	Kaguya Picaro	17	20	19	15	11	-	-	wk	-	-	-	-	-	nu	nu	y
+29	Black Ooze	19	18	20	16	21	rs	rs	-	rs	wk	-	wk	-	wk	nu
+33	Mothman	21	24	16	24	21	-	wk	-	-	nu	-	rs	-	-	-
+44	Girimehkala	36	24	32	32	15	rp	rp	rs	-	-	-	-	-	wk	nu
+50	Tsukiyomi	38	32	33	37	17	rs	-	-	-	-	-	-	wk	rs	rp	y
+55	Tsukiyomi Picaro	41	35	36	49	20	rs	-	-	-	-	-	-	wk	rs	rp	y
+60	Lilith	33	43	37	39	35	-	-	wk	rp	-	-	-	-	-	nu
+75	Sandalphon	46	51	49	48	38	rs	rs	-	-	rs	-	-	-	rp	nu
+
+Sun
+19	Suzaku	11	14	10	18	11	-	-	ab	wk	-	-	-	rs	-	-
+39	Mithras	27	25	27	25	20	rs	-	ab	-	-	-	wk	nu	-	-
+42	Yurlungur	26	29	28	27	23	-	-	-	-	nu	-	wk	-	rs	-
+49	Horus	30	32	32	35	25	-	-	wk	-	nu	-	-	-	rp	-
+53	Ganesha	39	31	37	33	26	rs	-	-	-	-	ab	wk	-	-	-
+57	Yatagarasu	35	41	30	40	32	-	-	-	-	-	rs	-	-	nu	wk
+63	Quetzalcoatl	38	42	41	41	34	-	-	nu	-	-	rs	wk	-	-	-
+75	Asura-Ou	52	48	51	49	35	-	-	nu	-	-	-	wk	rp	-	-	Bishamonten	Koumokuten	Zouchouten	Jikokuten
+
+Judgement
+37	Anubis	23	26	24	22	23	-	-	-	-	-	-	-	-	nu	nu
+59	Trumpeter	33	42	40	38	31	-	-	-	ab	rp	-	-	-	rp	nu	Black Rider	Pale Rider	Red Rider	White Rider
+64	Yamata-no-Orochi	44	38	48	36	33	-	-	-	nu	-	-	-	wk	-	rs
+74	Abaddon	51	38	58	43	39	ab	ab	-	-	-	-	wk	wk	-	ab
+81	Messiah	50	50	50	50	50	-	-	rs	rs	rs	rs	rs	rs	rp	wk	y
+82	Shiva	55	54	53	53	38	-	-	-	nu	rp	-	ab	wk	nu	nu
+87	Michael	57	54	55	56	46	-	rs	-	-	-	-	-	-	rp	nu	Uriel	Raphael	Gabriel
+90	Messiah Picaro	56	56	55	55	55	-	-	rs	rs	rs	rs	rs	rs	rp	wk	y
+92	Satan	62	59	55	52	55	-	rs	-	rp	-	-	-	-	-	rp

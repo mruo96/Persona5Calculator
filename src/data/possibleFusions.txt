@@ -1,0 +1,249 @@
+Fool
+Magician	Death
+Priestess	Moon
+Empress	Hanged Man
+Emperor	Temperance
+Hierophant	Hermit
+Lovers	Chariot
+Chariot	Moon
+Justice	Star
+Hermit	Priestess
+Fortune	Lovers
+Strength	Death
+Hanged Man	Tower
+Death	Strength
+Temperance	Hierophant
+Devil	Temperance
+Tower	Empress
+Star	Magician
+Moon	Justice
+Sun	Justice
+Judgement	Sun
+
+Magician
+Priestess	Temperance
+Empress	Justice
+Emperor	Hanged Man
+Hierophant	Death
+Lovers	Devil
+Chariot	Priestess
+Justice	Emperor
+Hermit	Lovers
+Fortune	Justice
+Strength	Fool
+Hanged Man	Empress
+Death	Hermit
+Temperance	Chariot
+Devil	Hierophant
+Tower	Temperance
+Star	Priestess
+Moon	Lovers
+Sun	Hierophant
+Judgement	Strength
+
+Priestess
+Empress	Emperor
+Emperor	Empress
+Hierophant	Magician
+Lovers	Fortune
+Chariot	Hierophant
+Justice	Death
+Hermit	Temperance
+Fortune	Magician
+Strength	Devil
+Hanged Man	Death
+Death	Magician
+Temperance	Devil
+Devil	Moon
+Tower	Hanged Man
+Star	Hermit
+Moon	Hierophant
+Sun	Chariot
+Judgement	Justice
+
+Empress
+Emperor	Justice
+Hierophant	Fool
+Lovers	Judgement
+Chariot	Star
+Justice	Lovers
+Hermit	Strength
+Fortune	Hermit
+Strength	Chariot
+Hanged Man	Priestess
+Death	Fool
+Temperance	Priestess
+Devil	Sun
+Tower	Emperor
+Star	Lovers
+Moon	Fortune
+Sun	Tower
+Judgement	Emperor
+
+Emperor
+Hierophant	Fortune
+Lovers	Fool
+Chariot	Strength
+Justice	Chariot
+Hermit	Hierophant
+Fortune	Sun
+Strength	Tower
+Hanged Man	Devil
+Death	Hermit
+Temperance	Devil
+Devil	Justice
+Tower	Star
+Star	Lovers
+Moon	Tower
+Sun	Judgement
+Judgement	Priestess
+
+Hierophant
+Lovers	Strength
+Chariot	Star
+Justice	Hanged Man
+Hermit	Fortune
+Fortune	Justice
+Strength	Fool
+Hanged Man	Sun
+Death	Chariot
+Temperance	Death
+Devil	Hanged Man
+Tower	Judgement
+Star	Tower
+Moon	Priestess
+Sun	Lovers
+Judgement	Empress
+
+Lovers
+Chariot	Temperance
+Justice	Judgement
+Hermit	Chariot
+Fortune	Strength
+Strength	Death
+Hanged Man	Sun
+Death	Temperance
+Temperance	Strength
+Devil	Moon
+Tower	Empress
+Star	Chariot
+Moon	Magician
+Sun	Empress
+Judgement	Hanged Man
+
+Chariot
+Justice	Moon
+Hermit	Devil
+Fortune	Priestess
+Strength	Hermit
+Hanged Man	Fool
+Death	Devil
+Temperance	Strength
+Devil	Temperance
+Tower	Fortune
+Star	Moon
+Moon	Lovers
+Sun	Priestess
+Judgement	Hierophant
+
+Justice
+Hermit	Magician
+Fortune	Emperor
+Strength	Hierophant
+Hanged Man	Lovers
+Death	Fool
+Temperance	Emperor
+Devil	Fool
+Tower	Sun
+Star	Empress
+Moon	Devil
+Sun	Hanged Man
+Judgement	Tower
+
+Hermit
+Fortune	Star
+Strength	Hierophant
+Hanged Man	Star
+Death	Strength
+Temperance	Strength
+Devil	Priestess
+Tower	Judgement
+Star	Strength
+Moon	Priestess
+Sun	Devil
+Judgement	Emperor
+
+Fortune
+Strength	Temperance
+Hanged Man	Emperor
+Death	Star
+Temperance	Empress
+Devil	Hierophant
+Tower	Hanged Man
+Star	Devil
+Moon	Sun
+Sun	Star
+Judgement	Tower
+
+Strength
+Hanged Man	Temperance
+Death	Hierophant
+Temperance	Chariot
+Devil	Death
+Tower	Chariot
+Star	Moon
+Moon	Magician
+Sun	Moon
+Judgement	Fortune
+
+Hanged Man
+Death	Moon
+Temperance	Death
+Devil	Fortune
+Tower	Hermit
+Star	Justice
+Moon	Strength
+Sun	Hierophant
+Judgement	Star
+
+Death
+Temperance	Hanged Man
+Devil	Chariot
+Tower	Sun
+Star	Devil
+Moon	Hierophant
+Sun	Priestess
+Judgement	Magician
+
+Temperance
+Devil	Fool
+Tower	Fortune
+Star	Sun
+Moon	Fortune
+Sun	Magician
+Judgement	Hermit
+
+Devil
+Tower	Magician
+Star	Strength
+Moon	Chariot
+Sun	Hermit
+Judgement	Lovers
+
+Tower
+Star	Death
+Moon	Hermit
+Sun	Emperor
+Judgement	Moon
+
+Star
+Moon	Temperance
+Sun	Judgement
+Judgement	Fortune
+
+Moon
+Sun	Empress
+Judgement	Fool
+
+Sun
+Judgement	Death

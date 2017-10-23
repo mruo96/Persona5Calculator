@@ -1,0 +1,183 @@
+Crystal Skull
+Fool	2
+Magician	1
+Priestess	1
+Empress	1
+Emperor	-1
+Hierophant	-1
+Lovers	1
+Chariot	-1
+Justice	1
+Hermit	-2
+Fortune	-1
+Strength	-1
+Hanged Man	-1
+Death	1
+Temperance	2
+Devil	-1
+Tower	-1
+Star	1
+Moon	-1
+Sun	1
+Judgement	-1
+
+Regent
+Fool	-1
+Magician	1
+Priestess	-1
+Empress	-1
+Emperor	+2
+Hierophant	1
+Lovers	-1
+Chariot	1
+Justice	1
+Hermit	2
+Fortune	1
+Strength	-1
+Hanged Man	1
+Death	1
+Temperance	-1
+Devil	-2
+Tower	-1
+Star	1
+Moon	-1
+Sun	1
+Judgement	-1
+
+Queen's Necklace
+Fool	1
+Magician	-1
+Priestess	1
+Empress	2
+Emperor	-1
+Hierophant	-1
+Lovers	1
+Chariot	-1
+Justice	-1
+Hermit	-1
+Fortune	-1
+Strength	1
+Hanged Man	1
+Death	-1
+Temperance	1
+Devil	1
+Tower	-2
+Star	-1
+Moon	2
+Sun	-1
+Judgement	-1
+
+Stone of Scone
+Fool	-1
+Magician	2
+Priestess	-1
+Empress	-1
+Emperor	1
+Hierophant	1
+Lovers	-1
+Chariot	1
+Justice	-1
+Hermit	-1
+Fortune	2
+Strength	-2
+Hanged Man	-1
+Death	1
+Temperance	-1
+Devil	-1
+Tower	1
+Star	1
+Moon	1
+Sun	-1
+Judgement	1
+
+Koh-i-Noor
+Fool	1
+Magician	-1
+Priestess	2
+Empress	1
+Emperor	-1
+Hierophant	-2
+Lovers	1
+Chariot	-1
+Justice	2
+Hermit	1
+Fortune	-1
+Strength	1
+Hanged Man	-1
+Death	1
+Temperance	-1
+Devil	1
+Tower	1
+Star	-1
+Moon	-1
+Sun	1
+Judgement	-1
+
+Orlov
+Fool	-1
+Magician	1
+Priestess	11
+Empress	11
+Emperor	-1
+Hierophant	1
+Lovers	-1
+Chariot	1
+Justice	1
+Hermit	1
+Fortune	-2
+Strength	1
+Hanged Man	1
+Death	-1
+Temperance	1
+Devil	1
+Tower	1
+Star	1
+Moon	1
+Sun	1
+Judgement	1
+
+Emperor's Amulet
+Fool	-1
+Magician	1
+Priestess	-1
+Empress	1
+Emperor	1
+Hierophant	-1
+Lovers	-1
+Chariot	-2
+Justice	1
+Hermit	1
+Fortune	-1
+Strength	1
+Hanged Man	2
+Death	-1
+Temperance	1
+Devil	2
+Tower	1
+Star	-1
+Moon	-1
+Sun	-1
+Judgement	1
+
+Hope Diamond
+Fool	1
+Magician	1
+Priestess	1
+Empress	-1
+Emperor	1
+Hierophant	-1
+Lovers	-2
+Chariot	-1
+Justice	-1
+Hermit	1
+Fortune	1
+Strength	-1
+Hanged Man	-1
+Death	2
+Temperance	-1
+Devil	-1
+Tower	-1
+Star	1
+Moon	-1
+Sun	2
+Judgement	-1
