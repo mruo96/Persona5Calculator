@@ -7,7 +7,7 @@ Persona 5 was developed by Atlus and released in September 2016 for the Playstat
 
 Players can fuse together different personas to create a new one. Generally, the results of these fusions are determined by rules that differ based on the arcana and base levels of the ingredient personas. However, some special personas, called “treasure demons,” follow different rules when fused together with different personas. Also, there are usually multiple ways to fuse a specific persona, from two to more than a hundred.
 
-Even though it is not difficult to calculate the result of a fusion between two specific personas, knowing all the possible pairs of personas that fuse into a specific persona is impossible without calculating all possible fusions. This is where the calculator may be useful: if a player wishes to fuse a specific persona but does not know which personas to fuse together.
+Even though it is simple to calculate the result of a fusion between two specific personas, knowing all the possible pairs of personas that fuse into a specific persona is difficult without calculating the possible fusions between all personas. This is where the calculator may be useful: if a player wishes to fuse a specific persona p but does not know which pairs of personas will fuse together to create p.
 
 ## Calculator Functions
 1. Provide information about a specific persona given its name.
