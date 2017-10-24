@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.*;
 
 /**
- * Parser utility to load the personaData.txt file
+ * Parser utility to load the personaData.txt, possibleFusions.txt and treasureFusions.txt files.
  */
 public class Persona5ParserGraph {
 	/**
