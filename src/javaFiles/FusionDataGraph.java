@@ -7,27 +7,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/*
-* 4) user options:
-*    - information about a specific persona given its name:
-*      get the data out of a master map of all persona
-*    - a list of all the arcana:
-*      get keyset of map from arcana to persona list
-*    - a list of all the personas in a specific arcana
-*      return a copy of the list storing the persona objects for the specified arcana
-*    - a list of all the persona pairs that will fuse into a specific persona
-*      look up in the map from persona name to set of pairs
-*    - the result of the fusion of two specific personas
-*      look up the result in the graph. if its not there then its an invalid fusion
-*    - all the fusions a specific persona can be in:
-*      get children of the persona node
-*    
-*    -graph with nodes as personas and edges as the result of fusion
-*    -hashmap from arcana name to a list of persona in that arcana (ordered by level)
-*    -master map of hashmap from persona name to the actual persona object
-*    -hashmap from persona to hashset of pairs of persona that fuse together to make the key
-*    
-*    */
+/**
+ * This class calculates and stores the data pertaining to the results of fusions between 
+ * all the personas in Persona 5. The data is taken from the personaData.txt, possibleFusions.txt
+ * and treasureFusions.txt datasets. 
+ */
 public class FusionDataGraph {
 	
 	public String troubleshooting = "";
