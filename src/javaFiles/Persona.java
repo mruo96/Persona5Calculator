@@ -1,6 +1,12 @@
 package javaFiles;
 import java.util.List;
 
+/**
+ * Persona represents a persona in the game Persona 5. Each persona has a name, an arcana it
+ * belongs to, a base level, unique stats (strength, magic, endurance, agility, luck), unique
+ * weaknesses and resistances to the types of attacks in the game, and a status as a regular
+ * persona, a dlc persona, a treasure demon, or a guillotine-only persona.
+ */
 public class Persona implements Comparable<Persona> {
 	
 	private String name;
