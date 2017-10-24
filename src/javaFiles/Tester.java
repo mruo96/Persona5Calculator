@@ -1,11 +1,75 @@
 package javaFiles;
 
 import java.util.ArrayList;
+/*
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
+* An explanation of fusion calculations:
+* A = ingredient persona 1 (regular, dlc and guillotine personas only, unless B is also a treasure demon)
+* B = ingredient persona 2 (regular, dlc and guillotine personas only, unless A is also a treasure demon)
+* C = resulting persona from fusing A and B (regular and dlc personas only)
+* Aa = the arcana A belongs in
+* Ab = the arcana B belongs in
+* Ac = the arcana C belongs in
+* 
+* 1. Calculate Ac
+* If Aa and Ab are not the same arcana, look up Ac in possibleFusions.txt.
+* If Aa and Ab are the same arcana, Ac is the same as Aa and Ab
+* 
+* 2. Calculate the "calculated level." 
+* Calculated Level = (base level of A + base level of B) / 2.0 + 0.5
+* 
+* If Aa != Ab:
+* C = the persona in Ac that has a base level equal to the calculated level. If there is no persona in
+* Ac that has a base level equal to the calculated level, then C = the next persona in Ac (that is not
+* a guillotine persona or a treasure demon) with a base level that is greater than the calculated level.
+* If all of the personas with base levels greater than calculated level are either guillotine personas
+* or treasure demons, then the fusion between A and B is impossible. If the calculated level is greater
+* than the base level of the persona with the highest base level in Ac, then fusion between A and B is
+* impossible.
+* 
+* If Aa != Ab:
+* C = the persona in Ac that has a base level equal to the calculated level. If there is no persona in
+* Ac that has a base level equal to the calculated level, then C = the next persona in Ac (that is not
+* a guillotine persona or a treasure demon) with a base level that is less than the calculated level.
+* If all of the personas with base levels less than calculated level are either guillotine personas
+* or treasure demons, then the fusion between A and B is impossible. If 
+* 
+* Ex. 
+* A = Norn (arcana Fortune, base level 52)
+* B = Naga (arcana Hermit, base level 24)
+* 
+* According to possibleFusions.txt, Fortune x Hermit = Star. 
+* 
+* Calculated level = (52 + 24) / 2.0 + 0.5 = 38.5
+* 
+* The personas in the Star arcana:
+* Base Level   Persona
+* 11			Kodama
+* 23			Fuu-Ki
+* 30			Neko Shogun
+* 36			Kaiwan
+* 43			Ananta
+* 52			Garuda
+* 64			Hanuman
+* 67			Cu Chulainn
+* 80			Sraosha
+* 93			Lucifer
+* 
+* Since no persona in the Star arcana has a base level of 38.5, we look at the next persona with a
+* base level greater than 38.5, which is Ananta. So, Norn and Naga fuse together into Ananta. Ananta
+* is a regular persona, so C = Ananta.
+* 
+* If Ananta had been a guillotine persona or a treasure demon, then we would look at the next persona 
+* with a base level greater than 43, which is Garuda. Garuda is not a guillotine persona or a treasure
+* demon, so C = Garuda in this case.
+* 
+* 
+* 
+* Fusions between a regular/dlc/guillotine persona and a treasure demon are different.
+* */
 public class Tester {
 	
 	public static void main(String[] args) {
