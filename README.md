@@ -3,7 +3,7 @@
 This program is a calculator for the fusion of personas in the game Persona 5. 
 
 ## Persona 5 and Persona Fusion
-Persona 5 was developed by Atlus and released in September 2016 for the Playstation 4 and Playstation 3. In Persona 5, the player collects different “persona,” which are based off of characters from myths or deities from numerous religions. Each persona can be identified by its name, its base level, and its arcana. There are 20 different arcana (ex. Sun, Fool, Emperor, Chariot) and around 10 persona belong to each arcana. 
+Persona 5 was developed by Atlus and released in September 2016 for the Playstation 4 and Playstation 3. In Persona 5, the player collects different “persona,” which are based off of characters from myths or deities from numerous religions. Each persona can be identified by its name, its base level, and its arcana. There are 20 different arcanas (ex. Sun, Fool, Emperor, Chariot) and around 10 personas belong to each arcana. 
 
 Players can fuse together different personas to create a new one. Generally, the results of these fusions are determined by rules that differ based on the arcana and base levels of the ingredient personas. However, some special personas, called “treasure demons,” follow different rules when fused together with different personas. Also, there are usually multiple ways to fuse a specific persona, from two to more than a hundred.
 

@@ -3,29 +3,10 @@ import java.io.*;
 import java.util.*;
 
 /**
- * Parser utility to load the personaData.txt file
+ * Parser utility to load the personaData.txt, possibleFusions.txt and treasureFusions.txt files.
  */
 public class Persona5ParserGraph {
-	/**
-	 * A checked exception class for bad data files
-	 */
-	@SuppressWarnings("serial")
-	public static class MalformedDataException extends Exception {
-		public MalformedDataException() { }
-
-		public MalformedDataException(String message) {
-			super(message);
-		}
-
-		public MalformedDataException(Throwable cause) {
-			super(cause);
-		}
-
-		public MalformedDataException(String message, Throwable cause) {
-			super(message, cause);
-		}
-	}
-
+	
 	/**
 	 * Reads the personaData.txt file
 	 * 

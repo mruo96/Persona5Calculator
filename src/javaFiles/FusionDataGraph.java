@@ -7,55 +7,36 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/*
-* 4) user options:
-*    - information about a specific persona given its name:
-*      get the data out of a master map of all persona
-*    - a list of all the arcana:
-*      get keyset of map from arcana to persona list
-*    - a list of all the personas in a specific arcana
-*      return a copy of the list storing the persona objects for the specified arcana
-*    - a list of all the persona pairs that will fuse into a specific persona
-*      look up in the map from persona name to set of pairs
-*    - the result of the fusion of two specific personas
-*      look up the result in the graph. if its not there then its an invalid fusion
-*    - all the fusions a specific persona can be in:
-*      get children of the persona node
-*    
-*    -graph with nodes as personas and edges as the result of fusion
-*    -hashmap from arcana name to a list of persona in that arcana (ordered by level)
-*    -master map of hashmap from persona name to the actual persona object
-*    -hashmap from persona to hashset of pairs of persona that fuse together to make the key
-*    
-*    */
+/**
+ * This class calculates and stores the data pertaining to the results of fusions between 
+ * all the personas in Persona 5. The data is taken from the personaData.txt, possibleFusions.txt
+ * and treasureFusions.txt datasets. 
+ */
 public class FusionDataGraph {
-	
-	public String troubleshooting = "";
-	public boolean wtf = true;
 
 	// nodes are personas and edges is the persona that is the result of fusing the two
 	// nodes it connects
-	public Graph<String, String> fusions;
+	private Graph<String, String> fusions;
 	
 	// map from persona names to the corresponding persona object
-	public HashMap<String, Persona> personas;
+	private HashMap<String, Persona> personas;
 	
 	// map from arcana names to an ordered (by base level) list of persona in that arcana
-	public HashMap<String, List<Persona>> arcanas;
+	private HashMap<String, List<Persona>> arcanas;
 	
 	// map from persona names to a list of pairs of persona that fuse together to make the key persona
-	public HashMap<String, List<Pair>> fusionResults;
+	private HashMap<String, List<Pair>> fusionResults;
 	
 	// map from each arcana name to the highest level persona in the arcana
-	public HashMap<String, Integer> highestLevels;
+	private HashMap<String, Integer> highestLevels;
 	
 	// nodes are arcanas and edges are the resulting arcana from fusing the two nodes the edge
 	// connects
-	public Graph<String, String> possibleFusions;
+	private Graph<String, String> possibleFusions;
 	
 	// map from treasure demon names to a map of arcana names to integers that represent
 	// how many levels to go up/down when fusing a regular persona with a treasure demon
-	public HashMap<String, HashMap<String, Integer>> treasureFusions;
+	private HashMap<String, HashMap<String, Integer>> treasureFusions;
 			
     /**
      * @effects Constructs a FusionDataGraph
@@ -79,7 +60,7 @@ public class FusionDataGraph {
 		// parse the data in treasureFusions.txt and fill in treasureFusions
 		Persona5ParserGraph.parseTreasureFusions("src/data/treasureFusions.txt", treasureFusions);
 		
-		// calculate and store all possible fusions between personas
+		// calculate and store all possible fusions between different personas
 		calculateFusions();
 	}
 	
@@ -93,7 +74,7 @@ public class FusionDataGraph {
 	}
 	
     /**
-     * @return A set of Strings that represent the arcanas
+     * @return A set of Strings that represent the arcanas in Persona 5
      */
 	public Set<String> getAllArcana() {
 		return new HashSet<String>(arcanas.keySet());
@@ -169,6 +150,10 @@ public class FusionDataGraph {
     /**
      * private helper method that calculates all the possible fusions and stores the results
      * in private fields for later access
+     * 
+     * @modifies fusions, fusionResults
+     * @effects adds an entry to fusions and to fusionResults if the fusion between p1 
+     * 		    and p2 is possible
      */
 	private void calculateFusions() {
 		List<String> arc = new ArrayList<String>(arcanas.keySet()); // list of all the arcanas
@@ -182,7 +167,7 @@ public class FusionDataGraph {
 				
 				if (i == j) { // special case: calculate same-arcana fusions
 					for (int k = 0; k < arc1Personas.size(); k++) {
-						// l is initialized to k + 1 to avoid calculating fusions between two identical persona
+						// l is initialized to k + 1 to avoid calculating fusions between two identical personas
 						for (int l = k + 1; l < arc1Personas.size(); l++) {
 							calculateSingleSAFusion(arc1Personas.get(k), arc2Personas.get(l), arc1Personas.get(k).getArcana());
 						}
@@ -210,8 +195,8 @@ public class FusionDataGraph {
      * @param p1 The first persona involved in the fusion
      * @param p2 The second persona involved in the fusion
      * @param resArc The resulting arcana that the fusion between p1 and p2 will produce
-     * @modifies fusions
-     * @effects adds an entry to fusions if the fusion between p1 and p2 is possible
+     * @modifies fusions, fusionResults
+     * @effects adds entries to fusions and fusionResults if the fusion between p1 and p2 is possible
      */
 	private void calculateSingleDAFusion(Persona p1, Persona p2, String resArc) {
 		if (p1.getSpecialCase().equals("treasure") && !p2.getSpecialCase().equals("treasure")) {
@@ -362,14 +347,5 @@ public class FusionDataGraph {
 			temp.add(new Pair(p1, p2));
 			fusionResults.put(result, temp);
 		}
-	}
-	
-	// for testing purposes
-	public void printParsedData() {
-		System.out.println(highestLevels.toString());
-	}
-	
-	public HashMap<String, Integer> getHighestLevels() {
-		return highestLevels;
 	}
 }

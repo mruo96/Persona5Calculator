@@ -1,5 +1,8 @@
 package javaFiles;
 
+/**
+ * This class stores a pair of persona that represent the ingredient personas in a fusion.
+ */
 public class Pair {
 	
 	private Persona p1;
