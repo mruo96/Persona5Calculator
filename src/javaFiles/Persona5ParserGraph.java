@@ -6,7 +6,7 @@ import java.util.*;
  * Parser utility to load the personaData.txt, possibleFusions.txt and treasureFusions.txt files.
  */
 public class Persona5ParserGraph {
-	
+
 	/**
 	 * Reads the personaData.txt file
 	 * 
@@ -28,7 +28,6 @@ public class Persona5ParserGraph {
 	 * @effects fills arcana with a mappings from arcanas to a list of personas, fills personas with
 	 *          mappings from persona names to the actual persona objects, fills highestLevels with 
 	 *          mappings from arcanas to the level of the highest-level persona in that arcana
-	 * @throws MalformedDataException if the file is not well-formed
 	 */
 	public static void parsePersonas(String filename, HashMap<String, List<Persona>> arcana, 
 			HashMap<String, Persona> personas, HashMap<String, Integer> highestLevels, 
@@ -43,38 +42,38 @@ public class Persona5ParserGraph {
 			int highLev = 0;
 			boolean cont = true;
 			while ((inputLine = reader.readLine()) != null && cont) {
-				
+
 				// add the highest level to highestLevels for the previous arcana
 				if (inputLine.equals("")) {
 					int size = arcana.get(currentArcana).size();
 					highestLevels.put(currentArcana, highLev);
 					continue;
 				}
-				
+
 				String[] tokens = inputLine.split("\t");
 
 				if (tokens.length == 1) { // this is an arcana line
 					// add the new arcana to arcana
 					arcana.put(tokens[0], new ArrayList<Persona>());
-					
+
 					// set the current arcana
 					currentArcana = tokens[0];
 				} else {
 					Persona pers;
-					
+
 					Integer level = Integer.parseInt(tokens[0]);
 					String name = tokens[1];
-					
+
 					List<Integer> stats = new ArrayList<Integer>();
 					for (int i = 0; i < 5; i++) {
 						stats.add(Integer.parseInt(tokens[i + 2]));
 					}
-					
+
 					List<String> wr = new ArrayList<String>();
 					for (int i = 0; i < 10; i++) {
 						wr.add(tokens[i + 7]);
 					}
-					
+
 					// the persona is either a treasure demon, a dlc persona, a guillotine
 					// fusion only persona, or a regular persona
 					if (tokens.length > 17) {
@@ -87,23 +86,23 @@ public class Persona5ParserGraph {
 							for (int i = 17; i < tokens.length; i++) {
 								special.add(tokens[i]);
 							}
-							
+
 							pers = new Persona(name, currentArcana, level, stats, wr, "guillotine", special);
 						}
 					} else { // regular persona
 						pers = new Persona(name, currentArcana, level, stats, wr, "", null);
 						highLev = level;
 					}
-					
+
 					arcana.get(currentArcana).add(pers);
 					personas.put(name, pers);
 					fusions.insertNode(name);
 				}
 			}
-			
+
 			int size = arcana.get(currentArcana).size();
 			highestLevels.put(currentArcana, highLev);
-			
+
 		} catch (IOException e) {
 			System.err.println(e.toString());
 			e.printStackTrace(System.err);
@@ -118,7 +117,7 @@ public class Persona5ParserGraph {
 			}
 		}
 	}
-	
+
 	/**
 	 * Reads the possibleFusions.txt file
 	 * 
@@ -156,13 +155,13 @@ public class Persona5ParserGraph {
 				if (inputLine.equals("")) {
 					continue;
 				}
-				
+
 				String[] tokens = inputLine.split("\t");
 
 				if (tokens.length == 1) { // this is an arcana line
 					// add the new arcana to arcana
 					possibleFusions.insertNode(tokens[0]);
-					
+
 					// set the current arcana
 					currentArcana = tokens[0];
 				} else {
@@ -184,7 +183,7 @@ public class Persona5ParserGraph {
 			}
 		}
 	}
-	
+
 	/**
 	 * Reads the treasureFusions.txt file
 	 * 
@@ -219,13 +218,13 @@ public class Persona5ParserGraph {
 				if (inputLine.equals("")) {
 					continue;
 				}
-				
+
 				String[] tokens = inputLine.split("\t");
 
 				if (tokens.length == 1) { // this is a treasure demon line
 					// add a mapping for the new treasure demon
 					treasureFusions.put(tokens[0], new HashMap<String, Integer>());
-					
+
 					// set the current treasure demon
 					currentTD = tokens[0];
 				} else {
