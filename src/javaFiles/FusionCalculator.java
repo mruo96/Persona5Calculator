@@ -37,7 +37,9 @@ import java.util.Set;
 public class FusionCalculator {
 
 	public static void main(String[] args) {
+		System.out.println("Preparing Fusion Calculations...");
 		FusionDataGraph fd = new FusionDataGraph();
+		System.out.println("Done!");
 		
 		printMenu();
 
@@ -129,7 +131,13 @@ public class FusionCalculator {
 						if (p1 == null || p2 == null) {
 							System.out.print("Invalid persona name(s). Enter the name of the first persona or b to go back to main menu: ");
 						} else { // valid name; print out the info of the user-specified persona
-							printFusionResult(fd, p1, p2);
+							Persona result = fd.getFusionResult(p1.getName(), p2.getName());
+							
+							if (result == null) { // fusion is impossible between p1 and p2
+								System.out.println("Fusion is impossible between " + p1.getName() + " and " + p2.getName() + "\n");
+							} else {
+								System.out.println(p1.getName() + " x " + p2.getName() + " = " + result.getName() + "\n");
+							}
 							
 							invalidName = false;
 						}
@@ -206,16 +214,6 @@ public class FusionCalculator {
 				System.out.println(fusions.get(i).getP1() + ", " + fusions.get(i).getP2());
 			}
 			System.out.println();
-		}
-	}
-	
-	private static void printFusionResult(FusionDataGraph fd, Persona p1, Persona p2) {
-		Persona result = fd.getFusionResult(p1.getName(), p2.getName());
-		
-		if (result == null) { // fusion is impossible between p1 and p2
-			System.out.println("Fusion is impossible between " + p1.getName() + " and " + p2.getName() + "\n");
-		} else {
-			System.out.println(p1.getName() + " x " + p2.getName() + " = " + result.getName() + "\n");
 		}
 	}
 	
