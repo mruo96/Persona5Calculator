@@ -37,16 +37,35 @@ import java.util.Set;
 public class FusionCalculator {
 
 	public static void main(String[] args) {
-		FusionDataGraph fd = new FusionDataGraph();
+		Scanner scan = new Scanner(System.in);
+
+		FusionDataGraph fd = null;
+
+		// ask the user if they want to include dlc personas in the fusion calculations
+		boolean invalidInput = true;
+		while (invalidInput) {
+			System.out.print("Include DLC personas? Answer y or n: ");
+
+			String input = scan.nextLine();
+			if (input.equals("y")) {
+				fd = new FusionDataGraph(true);
+				invalidInput = false;
+			} else if (input.equals("n")) {
+				fd = new FusionDataGraph(false);
+				invalidInput = false;
+			} else {
+				System.out.println("Invalid answer.\n");
+			}
+		}
+		System.out.println();
 
 		printMenu();
 
-		Scanner scan = new Scanner(System.in);
 		while (true) {
 			System.out.print("Please enter i, a, p, f, r, k, q, or m for menu: ");
 
 			String input = scan.nextLine();
-			if (input.equals("i")) {
+			if (input.equals("i")) { // print information about a specific persona
 				System.out.print("Enter the name of a persona (first letter capitalized): ");
 
 				boolean invalidName = true;
@@ -64,9 +83,9 @@ public class FusionCalculator {
 						invalidName = false;
 					}
 				}
-			} else if (input.equals("a")) {
+			} else if (input.equals("a")) { // print a list of the 20 arcana
 				printArcana(fd);
-			} else if (input.equals("p")) {
+			} else if (input.equals("p")) { // print all the persona in a specified arcana
 				Set<String> arcana = fd.getAllArcana();
 
 				System.out.print("Enter the name of an arcana (first letter capitalized): ");
@@ -89,7 +108,7 @@ public class FusionCalculator {
 						invalidName = false;
 					}
 				}
-			} else if (input.equals("f")) {
+			} else if (input.equals("f")) { // print a list of all the possible fusions to a specific persona
 				System.out.print("Enter the name of a persona (first letter capitalized): ");
 
 				boolean invalidName = true;
@@ -111,7 +130,7 @@ public class FusionCalculator {
 						invalidName = false;
 					}
 				}
-			} else if (input.equals("r")) {
+			} else if (input.equals("r")) { // print the resulting persona of a fusion between two specific persona
 				System.out.print("Enter the name of the first persona (first letter capitalized): ");
 
 				boolean invalidName = true;
@@ -135,11 +154,11 @@ public class FusionCalculator {
 						}
 					}
 				}
-			} else if (input.equals("m")) {
+			} else if (input.equals("m")) { // print the menu
 				printMenu();
-			} else if (input.equals("k")) { 
+			} else if (input.equals("k")) { // print the abbreviation key
 				printAbbreviationKey();
-			} else if (input.equals("q")) {
+			} else if (input.equals("q")) { // quit the program
 				scan.close();
 				return;
 			} else { // invalid input
@@ -203,7 +222,11 @@ public class FusionCalculator {
 		} else {
 			System.out.println(fusions.size() + " fusions for " + input + ":");
 			for (int i = 0; i < fusions.size(); i++) {
-				System.out.println(fusions.get(i).getP1() + ", " + fusions.get(i).getP2());
+				Persona p1 = fusions.get(i).getP1();
+				Persona p2 = fusions.get(i).getP2();
+
+				System.out.println(p1.getName() + " (" + p1.getBaseLevel() + " / "+ p1.getArcana() + ")" + " x " + 
+						p2.getName() + " (" + p2.getBaseLevel() + " / "+ p2.getArcana() + ")");
 			}
 			System.out.println();
 		}
@@ -215,7 +238,8 @@ public class FusionCalculator {
 		if (result == null) { // fusion is impossible between p1 and p2
 			System.out.println("Fusion is impossible between " + p1.getName() + " and " + p2.getName() + "\n");
 		} else {
-			System.out.println(p1.getName() + " x " + p2.getName() + " = " + result.getName() + "\n");
+			System.out.println(p1.getName() + " (" + p1.getBaseLevel() + " / "+ p1.getArcana() + ")" + " x " + 
+					p2.getName() + " (" + p2.getBaseLevel() + " / "+ p2.getArcana() + ")" + " = " + result.getName() + "\n");
 		}
 	}
 

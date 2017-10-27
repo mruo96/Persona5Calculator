@@ -31,7 +31,7 @@ public class Persona5ParserGraph {
 	 */
 	public static void parsePersonas(String filename, HashMap<String, List<Persona>> arcana, 
 			HashMap<String, Persona> personas, HashMap<String, Integer> highestLevels, 
-			Graph<String, String> fusions) {
+			Graph<String, String> fusions, boolean includeDlc) {
 
 		BufferedReader reader = null;
 		try {
@@ -78,7 +78,11 @@ public class Persona5ParserGraph {
 					// fusion only persona, or a regular persona
 					if (tokens.length > 17) {
 						if (tokens[17].equals("y")) { // dlc persona
-							pers = new Persona(name, currentArcana, level, stats, wr, "dlc", null);
+							if (includeDlc) {
+								pers = new Persona(name, currentArcana, level, stats, wr, "dlc", null);
+							} else {
+								pers = null;
+							}
 						} else if (tokens[17].equals("t")) { // treasure demon
 							pers = new Persona(name, currentArcana, level, stats, wr, "treasure", null);
 						} else { // guillotine fusion
@@ -94,9 +98,11 @@ public class Persona5ParserGraph {
 						highLev = level;
 					}
 
-					arcana.get(currentArcana).add(pers);
-					personas.put(name, pers);
-					fusions.insertNode(name);
+					if (pers != null) {
+						arcana.get(currentArcana).add(pers);
+						personas.put(name, pers);
+						fusions.insertNode(name);
+					}
 				}
 			}
 

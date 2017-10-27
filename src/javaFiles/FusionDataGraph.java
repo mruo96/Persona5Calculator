@@ -41,7 +41,7 @@ public class FusionDataGraph {
 	/**
 	 * @effects Constructs a FusionDataGraph
 	 */
-	public FusionDataGraph() {
+	public FusionDataGraph(boolean includeDlc) {
 		fusions = new Graph<String, String>();
 		personas = new HashMap<String, Persona>();
 		arcanas = new HashMap<String, List<Persona>>();
@@ -52,7 +52,7 @@ public class FusionDataGraph {
 
 		// parse the data in personaData.txt and fill arcanas, personas, and highestLevels
 		Persona5ParserGraph.parsePersonas("src/data/personaData.txt", arcanas, personas, highestLevels, 
-				fusions);
+				fusions, includeDlc);
 
 		// parse the data in possibleFusions.txt and fill in possibleFusions
 		Persona5ParserGraph.parsePossibleFusions("src/data/possibleFusions.txt", possibleFusions);
