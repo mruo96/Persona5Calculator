@@ -15,5 +15,6 @@ Even though it is simple to calculate the result of a fusion between two specifi
 3. List all the arcana in the game.
 4. List all the possible fusions for a specific persona given its name.
 5. Provide the resulting persona of a fusion between two specific personas, given their names.
+6. List all the fusions a specific persona is involved in as an ingredient
 
 To use the calculator, run /src/javaFiles/FusionCalculator
