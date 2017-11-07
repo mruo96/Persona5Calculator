@@ -38,8 +38,9 @@ public class FusionCalculator {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-
 		FusionDataGraph fd = null;
+
+		System.out.println("Welcome to Mimi's Persona 5 Fusion Calculator!");
 
 		// ask the user if they want to include dlc personas in the fusion calculations
 		boolean invalidInput = true;
@@ -57,15 +58,18 @@ public class FusionCalculator {
 				System.out.println("Invalid answer.\n");
 			}
 		}
-		System.out.println();
 
 		printMenu();
 
+		// until the user quits the program, keep prompting for a commands and execute them if
+		// the user inputs valid commands
 		while (true) {
-			System.out.print("Please enter i, a, p, f, r, k, q, or m for menu: ");
+			System.out.print("\nPlease enter i, a, p, f, r, k, q, or m for menu: ");
 
 			String input = scan.nextLine();
-			if (input.equals("i")) { // print information about a specific persona
+			if (input.equals("i")) { // print a short description of Persona 5, personas and fusion
+				printDescription();
+			} else if (input.equals("s")) { // print information about a specific persona
 				System.out.print("Enter the name of a persona (first letter capitalized): ");
 
 				boolean invalidName = true;
@@ -103,6 +107,9 @@ public class FusionCalculator {
 						System.out.println("There are " + personas.size() + " personas in the " + input + " arcana:");
 						for (int i = 0; i < personas.size(); i++) {
 							printPersonaInfo(personas.get(i));
+							if (i != personas.size() - 1) {
+								System.out.println();
+							}
 						}
 
 						invalidName = false;
@@ -156,17 +163,53 @@ public class FusionCalculator {
 				}
 			} else if (input.equals("m")) { // print the menu
 				printMenu();
+			} else if (input.equals("l")) { // print the related fusions of a persona
+				System.out.print("Enter the name of a persona (first letter capitalized): ");
+
+				boolean invalidName = true;
+				while (invalidName) {
+					input = scan.nextLine();
+					Persona p = fd.getPersona(input);
+
+					if (input.equals("b")) {
+						invalidName = false;
+					} else if (p == null) {
+						System.out.println("Invalid persona name. Enter another name or b to go back to main menu: ");
+					} else { // valid name; print out the fusions p is an ingredient in
+						System.out.println("Fusions " + p.getName() + " is an ingredient persona in:");
+
+						Set<String> ingredients = fd.getIncludedFusions(p.getName());
+						Iterator<String> itr = ingredients.iterator();
+						while (itr.hasNext()) {
+							String s = itr.next();
+							printFusionResult(fd, p, fd.getPersona(s));
+						}
+
+						invalidName = false;
+					}
+				}
 			} else if (input.equals("k")) { // print the abbreviation key
 				printAbbreviationKey();
 			} else if (input.equals("q")) { // quit the program
 				scan.close();
 				return;
 			} else { // invalid input
-				System.out.println("Invalid command :(\n");
+				System.out.println("Invalid command");
 			}
 		}
 	}
 
+	/**
+	 * prints the information associated with the persona p in the format:
+	 * Name
+	 * Arcana:
+	 * Base Level:
+	 * Stats: strength, magic, endurance, agility, luck
+	 * Weaknesses/Resistances: physical, gun, fire, ice, electricity, wind, psychic, nuclear, bless, curse
+	 * Regular, dlc, or guillotine persona
+	 * 
+	 * @param p The persona for which information will be printed
+	 */
 	private static void printPersonaInfo(Persona p) {
 		System.out.println(p.getName());
 		System.out.println("Arcana: " + p.getArcana());
@@ -188,12 +231,17 @@ public class FusionCalculator {
 		System.out.println();
 
 		if (p.getSpecialCase().equals("")) {
-			System.out.println("regular persona\n");
+			System.out.println("regular persona");
 		} else {
-			System.out.println(p.getSpecialCase() + " persona\n");
+			System.out.println(p.getSpecialCase() + " persona");
 		}
 	}
 
+	/**
+	 * prints out a list of all the arcanas in the game, separated by commas
+	 * 
+	 * @param fd The FusionDataGraph from which data will be drawn
+	 */
 	private static void printArcana(FusionDataGraph fd) {
 		Set<String> arcana = fd.getAllArcana();
 		Iterator<String> itr = arcana.iterator();
@@ -202,9 +250,15 @@ public class FusionCalculator {
 			String arc = itr.next();
 			System.out.print(", " + arc);
 		}
-		System.out.println("\n");
+		System.out.println();
 	}
 
+	/**
+	 * prints the ingredient personas of a guillotine fusion for the persona input
+	 * 
+	 * @param fd The FusionDataGraph from which data will be drawn
+	 * @param input The resulting persona for which the guillotine fusion will be printed
+	 */
 	private static void printGuillotineFusion(FusionDataGraph fd, String input) {
 		List<String> ingredientPersonas = fd.getGuillotineFusion(input);
 
@@ -212,13 +266,19 @@ public class FusionCalculator {
 		for (int i = 1; i < ingredientPersonas.size(); i++) {
 			System.out.print(", " + ingredientPersonas.get(i));
 		}
-		System.out.println("\n");
 	}
 
+	/**
+	 * prints the pairs of persona (p1, p2) that fuse together to make input in the format:
+	 * Name of p1 (base level of p1 / arcana of p1) x Name of p2 (base level of p2 / arcana of p2)
+	 * 
+	 * @param fd The FusionDataGraph from which data will be drawn
+	 * @param input The persona for which the fusions pairs will be printed
+	 */
 	private static void printFusionPairs(FusionDataGraph fd, String input) {
 		List<Pair> fusions = fd.getFusions(input);
 		if (fusions == null) { // the user-specified persona is a treasure demon; no possible fusions
-			System.out.println("Treasure demons cannot be fused.\n");
+			System.out.println("Treasure demons cannot be fused.");
 		} else {
 			System.out.println(fusions.size() + " fusions for " + input + ":");
 			for (int i = 0; i < fusions.size(); i++) {
@@ -228,32 +288,69 @@ public class FusionCalculator {
 				System.out.println(p1.getName() + " (" + p1.getBaseLevel() + " / "+ p1.getArcana() + ")" + " x " + 
 						p2.getName() + " (" + p2.getBaseLevel() + " / "+ p2.getArcana() + ")");
 			}
-			System.out.println();
 		}
 	}
 
+	/**
+	 * prints the result of a fusion between p1 and p2 in the format:
+	 * Name of p1 (base level of p1 / arcana of p1) x Name of p2 (base level of p2 / arcana of p2) = Name of resulting persona
+	 * 
+	 * @param fd The FusionDataGraph from which data will be drawn
+	 * @param p1 The first ingredient persona
+	 * @param p2 The second ingredient persona
+	 */
 	private static void printFusionResult(FusionDataGraph fd, Persona p1, Persona p2) {
 		Persona result = fd.getFusionResult(p1.getName(), p2.getName());
 
 		if (result == null) { // fusion is impossible between p1 and p2
-			System.out.println("Fusion is impossible between " + p1.getName() + " and " + p2.getName() + "\n");
+			System.out.println("Fusion is impossible between " + p1.getName() + " and " + p2.getName());
 		} else {
 			System.out.println(p1.getName() + " (" + p1.getBaseLevel() + " / "+ p1.getArcana() + ")" + " x " + 
-					p2.getName() + " (" + p2.getBaseLevel() + " / "+ p2.getArcana() + ")" + " = " + result.getName() + "\n");
+					p2.getName() + " (" + p2.getBaseLevel() + " / "+ p2.getArcana() + ")" + " = " + result.getName());
 		}
 	}
 
+	/**
+	 * prints the menu
+	 */
 	private static void printMenu() {
-		System.out.println("Menu Options:");
-		System.out.println("i: Information about a specific persona");
+		System.out.println("\nMenu Options:");
+		System.out.println("i: Information about Persona 5, personas and fusion");
+		System.out.println("s: Information about a specific persona");
 		System.out.println("a: A list of the 20 arcana");
 		System.out.println("p: A list of all the persona in a specific arcana");
 		System.out.println("f: A list of all the possible fusions to a specific persona");
 		System.out.println("r: The resulting persona of a fusion between two specific persona");
+		System.out.println("l: A list of all the fusions a specific persona is an ingredient of");
 		System.out.println("k: Abbreviation key");
-		System.out.println("q: Quit the program\n");
+		System.out.println("q: Quit the program");
 	}
 
+	/**
+	 * prints a basic description of Persona 5, personas and fusion
+	 */
+	private static void printDescription() {
+		System.out.println("About Persona 5 and Persona Fusion:");
+		System.out.println("Persona 5 was developed by Atlus and released in September 2016 for the Playstation 4 and");
+		System.out.println("Playstation 3. In Persona 5, the player collects different “persona,” which are based off");
+		System.out.println("of characters from myths or deities from numerous religions. Each persona can be identified");
+		System.out.println("by its name, its base level, and its arcana. There are 20 different arcanas");
+		System.out.println("(ex. Sun, Fool, Emperor, Chariot) and around 10 personas belong to each arcana.");
+		System.out.println("Players can fuse together different personas to create a new one. Generally, the results of");
+		System.out.println("these fusions are determined by rules that differ based on the arcana and base levels of the");
+		System.out.println("ingredient personas. However, some special personas, called “treasure demons,” follow different");
+		System.out.println("rules when fused together with different personas. Also, there are usually multiple ways to");
+		System.out.println("fuse a specific persona, from two to more than a hundred.\n");
+		System.out.println("Even though it is simple to calculate the result of a fusion between two specific personas,");
+		System.out.println("knowing all the possible pairs of personas that fuse into a specific persona is difficult");
+		System.out.println("without calculating the possible fusions between all personas. This is where the calculator");
+		System.out.println("may be useful: if a player wishes to fuse a specific persona p but does not know which pairs");
+		System.out.println("of personas will fuse together to create p.");
+	}
+
+	/**
+	 * print the abbreviation key used when displaying persona information
+	 */
 	private static void printAbbreviationKey() {
 		System.out.println("Abbreviation Key:");
 		System.out.println("phys = physical");
@@ -265,6 +362,6 @@ public class FusionCalculator {
 		System.out.println("rs = resist");
 		System.out.println("nu = null");
 		System.out.println("ab = absorb");
-		System.out.println("rp = repel\n");
+		System.out.println("rp = repel");
 	}
 }

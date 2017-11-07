@@ -148,6 +148,20 @@ public class FusionDataGraph {
 	}
 
 	/**
+	 * @param p The name of the persona for which the fusions it is involved in will be returned
+	 *        (only fusions involving two persona will be returned, no guillotine fusions)
+	 * @return A set of Strings that represent the other half of the possible fusions with p.
+	 * 	       Returns null if p is not a valid persona name.
+	 */
+	public Set<String> getIncludedFusions(String p) {
+		if (personas.containsKey(p)) {
+			return new HashSet<String>(fusions.getChildren(p));
+		} else {
+			return null;
+		}
+	}
+
+	/**
 	 * private helper method that calculates all the possible fusions and stores the results
 	 * in private fields for later access
 	 * 
