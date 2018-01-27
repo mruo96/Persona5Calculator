@@ -286,9 +286,9 @@ public class FusionCalculator {
 			for (int i = 0; i < fusions.size(); i++) {
 				Persona p1 = fusions.get(i).getP1();
 				Persona p2 = fusions.get(i).getP2();
-
-				System.out.println(p1.getName() + " (" + p1.getBaseLevel() + " / "+ p1.getArcana() + ")" + " x " + 
-						p2.getName() + " (" + p2.getBaseLevel() + " / "+ p2.getArcana() + ")");
+				
+				printPersonaInPairFormat(p1, p2);
+				System.out.println();
 			}
 		}
 	}
@@ -307,11 +307,23 @@ public class FusionCalculator {
 		if (result == null) { // fusion is impossible between p1 and p2
 			System.out.println("Fusion is impossible between " + p1.getName() + " and " + p2.getName());
 		} else {
-			System.out.println(p1.getName() + " (" + p1.getBaseLevel() + " / "+ p1.getArcana() + ")" + " x " + 
-					p2.getName() + " (" + p2.getBaseLevel() + " / "+ p2.getArcana() + ")" + " = " + result.getName());
+			printPersonaInPairFormat(p1, p2);
+			System.out.println(" = " + result.getName());
 		}
 	}
 
+	/**
+	 * prints a fusion between p1 and p2 in the following format:
+	 * Name of p1 (base level of p1 / arcana of p1) x Name of p2 (base level of p2 / arcana of p2)
+	 * 
+	 * @param p1 The first ingredient persona
+	 * @param p2 The second ingredient persona
+	 */
+	private static void printPersonaInPairFormat(Persona p1, Persona p2) {
+		System.out.print(p1.getName() + " (" + p1.getBaseLevel() + " / "+ p1.getArcana() + ")" + " x " + 
+				p2.getName() + " (" + p2.getBaseLevel() + " / "+ p2.getArcana() + ")");
+	}
+	
 	/**
 	 * prints all the personas in the specified arcana
 	 * 
