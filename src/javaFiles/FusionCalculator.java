@@ -38,12 +38,11 @@ public class FusionCalculator {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		FusionDataGraph fd = null;
 
 		System.out.println("Welcome to Mimi's Persona 5 Fusion Calculator!");
 
 		// ask the user if they want to include dlc personas in the fusion calculations
-		fd = askForDLC(scan, fd);
+		FusionDataGraph fd = askForDLC(scan);
 
 		printMenu();
 
@@ -181,7 +180,8 @@ public class FusionCalculator {
 	 * @return a FusionDataGraph that has been configured to either use dlc persona
 	 *         in the fusion calculations or not use dlc persona
 	 */
-	private static FusionDataGraph askForDLC(Scanner scan, FusionDataGraph fd) {
+	private static FusionDataGraph askForDLC(Scanner scan) {
+		FusionDataGraph fd = null;
 		boolean invalidInput = true;
 		while (invalidInput) {
 			System.out.print("Include DLC personas? Answer y or n: ");
