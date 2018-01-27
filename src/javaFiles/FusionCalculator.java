@@ -67,7 +67,7 @@ public class FusionCalculator {
 				String arcana = getValidArcanaName(scan, 
 						"Enter the name of an arcana (first letter of each word capitalized): ", fd);
 
-				if (arcana != null) {
+				if (!arcana.equals("")) {
 					printPersonasInArcana(arcana, fd);
 				}
 			} else if (input.equals("fusions to")) { // print a list of all the possible fusions to a specific persona
@@ -118,12 +118,14 @@ public class FusionCalculator {
 	 * @param scan The Scanner from which input will be read
 	 * @param userPrompt The message that prompts the user to input a persona name
 	 * @param fd The FusionGraphData for this particular run of the program
-	 * @return a valid persona name if the user provides one, or "" if the user decides to quit back
+	 * @return a valid persona if the user provides a valid name, or null if the user decides to quit back
 	 *         to the menu to choose another option
 	 */
 	private static Persona getValidPersonaName(Scanner scan, String userPrompt, FusionDataGraph fd) {
 		System.out.println(userPrompt);
 
+		// keep prompting the user for a valid persona name until the user inputs a valid name or
+		// inputs "b" to quit and choose another menu option
 		boolean invalidName = true;
 		while (invalidName) {
 			String input = scan.nextLine();
@@ -133,7 +135,7 @@ public class FusionCalculator {
 				invalidName = false;
 			} else if (p == null) {
 				System.out.println("Invalid persona name. Enter another name or b to go back to main menu: ");
-			} else { // valid name; print out the fusions p is an ingredient in
+			} else {
 				return p;
 			}
 		}
@@ -156,6 +158,8 @@ public class FusionCalculator {
 
 		System.out.print(userPrompt);
 
+		// keep prompting the user for a valid arcana name until the user inputs a valid name or
+		// inputs "b" to quit and choose another menu option
 		boolean invalidName = true;
 		while (invalidName) {
 			String input = scan.nextLine();
@@ -164,7 +168,7 @@ public class FusionCalculator {
 				invalidName = false;
 			} else if (!arcana.contains(input)) {
 				System.out.print("Invalid arcana name. Enter another name or b to go back to main menu: ");
-			} else { // valid name; print out the information of each persona in the user-specified arcana
+			} else {
 				return input;
 			}
 		}
@@ -218,6 +222,7 @@ public class FusionCalculator {
 		System.out.println("Arcana: " + p.getArcana());
 		System.out.println("Base Level: " + p.getBaseLevel());
 
+		// print the base stats of the persona
 		List<Integer> stats = p.getStats();
 		System.out.print("Stats: " + stats.get(0));
 		for (int i = 1; i < stats.size(); i++) {
@@ -225,14 +230,16 @@ public class FusionCalculator {
 		}
 		System.out.println(" (strength, magic, endurance, agility, luck)");
 
-		List<String> wr = p.getWR();
+		// print the weaknesses and resistances of the persona
+		List<String> weakRes = p.getWR();
 		System.out.println("Weaknesses/Resistances: ");
 		System.out.println("phys\tgun\tfire\tice\telec\twind\tpsych\tnucl\tbless\tcurse");
-		for (int i = 0; i < wr.size(); i++) {
-			System.out.print(wr.get(i) + "\t");
+		for (int i = 0; i < weakRes.size(); i++) {
+			System.out.print(weakRes.get(i) + "\t");
 		}
 		System.out.println();
 
+		// print the type of the persona: regular, guillotine, or treasure demon
 		if (p.getSpecialCase().equals("")) {
 			System.out.println("regular persona");
 		} else {
