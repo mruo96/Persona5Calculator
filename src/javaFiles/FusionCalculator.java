@@ -46,8 +46,8 @@ public class FusionCalculator {
 
 		printMenu();
 
-		// until the user quits the program, keep prompting for a commands and execute them if
-		// the user inputs valid commands
+		// until the user quits the program, keep prompting for commands and execute them if
+		// they are valid
 		while (true) {
 			System.out.print("\nPlease enter a command, or m for menu: ");
 
