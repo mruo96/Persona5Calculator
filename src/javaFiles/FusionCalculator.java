@@ -50,27 +50,27 @@ public class FusionCalculator {
 		// until the user quits the program, keep prompting for a commands and execute them if
 		// the user inputs valid commands
 		while (true) {
-			System.out.print("\nPlease enter i, a, p, f, r, k, q, or m for menu: ");
+			System.out.print("\nPlease enter a command, or m for menu: ");
 
-			String input = scan.nextLine();
-			if (input.equals("i")) { // print a short description of Persona 5, personas and fusion
+			String input = scan.nextLine().toLowerCase();
+			if (input.equals("about")) { // print a short description of Persona 5, personas and fusion
 				printDescription();
-			} else if (input.equals("s")) { // print information about a specific persona
+			} else if (input.equals("persona")) { // print information about a specific persona
 				Persona persona = getValidPersonaName(scan, 
 						"Enter the name of a persona (first letter capitalized): ", fd);
 
 				if (persona != null) {
 					printPersonaInfo(persona);
 				}
-			} else if (input.equals("a")) { // print a list of the 20 arcana
+			} else if (input.equals("arcanas")) { // print a list of the 20 arcana
 				printArcana(fd);
-			} else if (input.equals("p")) { // print all the personas in a specified arcana
+			} else if (input.equals("personas")) { // print all the personas in a specified arcana
 				String arcana = getValidArcanaName(scan, "Enter the name of an arcana (first letter of each word capitalized): ", fd);
 
 				if (arcana != null) {
 					printPersonasInArcana(arcana, fd);
 				}
-			} else if (input.equals("f")) { // print a list of all the possible fusions to a specific persona
+			} else if (input.equals("fusions to")) { // print a list of all the possible fusions to a specific persona
 				Persona persona = getValidPersonaName(scan, 
 						"Enter the name of a persona (first letter of each word capitalized): ", fd);
 
@@ -81,7 +81,7 @@ public class FusionCalculator {
 						printFusionPairs(fd, persona.getName());
 					}
 				}
-			} else if (input.equals("r")) { // print the resulting persona of a fusion between two specific persona
+			} else if (input.equals("fusion result")) { // print the resulting persona of a fusion between two specific persona
 				Persona persona1 = getValidPersonaName(scan, 
 						"Enter the name of the first persona (first letter of each word capitalized): ", fd);
 
@@ -93,16 +93,16 @@ public class FusionCalculator {
 				}
 			} else if (input.equals("m")) { // print the menu
 				printMenu();
-			} else if (input.equals("l")) { // print the related fusions of a persona
+			} else if (input.equals("related fusions")) { // print the related fusions of a persona
 				Persona persona = getValidPersonaName(scan, 
 						"Enter the name of a persona (first letter capitalized): ", fd);
 
 				if (persona != null) {
 					printRelatedFusions(persona, fd);
 				}
-			} else if (input.equals("k")) { // print the abbreviation key
+			} else if (input.equals("key")) { // print the abbreviation key
 				printAbbreviationKey();
-			} else if (input.equals("q")) { // quit the program
+			} else if (input.equals("quit")) { // quit the program
 				scan.close();
 				return;
 			} else { // invalid input
@@ -363,16 +363,16 @@ public class FusionCalculator {
 	 * prints the menu
 	 */
 	private static void printMenu() {
-		System.out.println("\nMenu Options:");
-		System.out.println("i: Information about Persona 5, personas and fusion");
-		System.out.println("s: Information about a specific persona");
-		System.out.println("a: A list of the 20 arcana");
-		System.out.println("p: A list of all the persona in a specific arcana");
-		System.out.println("f: A list of all the possible fusions to a specific persona");
-		System.out.println("r: The resulting persona of a fusion between two specific persona");
-		System.out.println("l: A list of all the fusions a specific persona is an ingredient of");
-		System.out.println("k: Abbreviation key");
-		System.out.println("q: Quit the program");
+		System.out.println("Menu Commands:");
+		System.out.println("about: Information about Persona 5, personas and fusion");
+		System.out.println("persona: Information about a specific persona");
+		System.out.println("arcanas: A list of the 20 arcana");
+		System.out.println("personas: A list of all the persona in a specific arcana");
+		System.out.println("fusions to: A list of all the possible fusions to a specific persona");
+		System.out.println("fusion result: The resulting persona of a fusion between two specific persona");
+		System.out.println("related fusions: A list of all the fusions a specific persona is an ingredient of");
+		System.out.println("key: Abbreviation key");
+		System.out.println("quit: Quit the program");
 	}
 
 	/**
