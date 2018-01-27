@@ -113,7 +113,7 @@ public class FusionCalculator {
 
 	/**
 	 * returns the valid name of an persona based on user input. If the user decides to quit,
-	 * returns an empty string.
+	 * returns null.
 	 * 
 	 * @param scan The Scanner from which input will be read
 	 * @param userPrompt The message that prompts the user to input a persona name
