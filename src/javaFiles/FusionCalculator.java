@@ -11,7 +11,7 @@ import java.util.Set;
  * About Persona 5 and Persona Fusion:
  * Persona 5 was developed by Atlus and released in September 2016 for the Playstation 4 and
  * Playstation 3. In Persona 5, the player collects different “persona,” which are based off
- * of characters from myths or deities from numerous religions. Each persona can be identified
+ * of characters from myths or deities from different religions. Each persona can be identified
  * by its name, its base level, and its arcana. There are 20 different arcanas 
  * (ex. Sun, Fool, Emperor, Chariot) and around 10 personas belong to each arcana. 
  * 
@@ -382,7 +382,7 @@ public class FusionCalculator {
 		System.out.println("About Persona 5 and Persona Fusion:");
 		System.out.println("Persona 5 was developed by Atlus and released in September 2016 for the Playstation 4 and");
 		System.out.println("Playstation 3. In Persona 5, the player collects different “persona,” which are based off");
-		System.out.println("of characters from myths or deities from numerous religions. Each persona can be identified");
+		System.out.println("of characters from myths or deities from different religions. Each persona can be identified");
 		System.out.println("by its name, its base level, and its arcana. There are 20 different arcanas");
 		System.out.println("(ex. Sun, Fool, Emperor, Chariot) and around 10 personas belong to each arcana.");
 		System.out.println("Players can fuse together different personas to create a new one. Generally, the results of");
@@ -406,7 +406,7 @@ public class FusionCalculator {
 		System.out.println("elec = electricity");
 		System.out.println("psych = psychic");
 		System.out.println("nucl = nuclear");
-		System.out.println("- = no weakness or resistance");
+		System.out.println("- = no weakness or resistance (neutral)");
 		System.out.println("wk = weak");
 		System.out.println("rs = resist");
 		System.out.println("nu = null");
