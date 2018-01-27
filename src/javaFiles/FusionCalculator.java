@@ -43,6 +43,145 @@ public class FusionCalculator {
 		System.out.println("Welcome to Mimi's Persona 5 Fusion Calculator!");
 
 		// ask the user if they want to include dlc personas in the fusion calculations
+		fd = askForDLC(scan, fd);
+
+		printMenu();
+
+		// until the user quits the program, keep prompting for a commands and execute them if
+		// the user inputs valid commands
+		while (true) {
+			System.out.print("\nPlease enter i, a, p, f, r, k, q, or m for menu: ");
+
+			String input = scan.nextLine();
+			if (input.equals("i")) { // print a short description of Persona 5, personas and fusion
+				printDescription();
+			} else if (input.equals("s")) { // print information about a specific persona
+				Persona persona = getValidPersonaName(scan, 
+						"Enter the name of a persona (first letter capitalized): ", fd);
+
+				if (persona != null) {
+					printPersonaInfo(persona);
+				}
+			} else if (input.equals("a")) { // print a list of the 20 arcana
+				printArcana(fd);
+			} else if (input.equals("p")) { // print all the personas in a specified arcana
+				String arcana = getValidArcanaName(scan, "Enter the name of an arcana (first letter of each word capitalized): ", fd);
+
+				if (arcana != null) {
+					printPersonasInArcana(arcana, fd);
+				}
+			} else if (input.equals("f")) { // print a list of all the possible fusions to a specific persona
+				Persona persona = getValidPersonaName(scan, 
+						"Enter the name of a persona (first letter of each word capitalized): ", fd);
+
+				if (persona != null) {
+					if (persona.getSpecialCase().equals("guillotine")) {
+						printGuillotineFusion(fd, persona.getName());
+					} else {
+						printFusionPairs(fd, persona.getName());
+					}
+				}
+			} else if (input.equals("r")) { // print the resulting persona of a fusion between two specific persona
+				Persona persona1 = getValidPersonaName(scan, 
+						"Enter the name of the first persona (first letter of each word capitalized): ", fd);
+
+				Persona persona2 = getValidPersonaName(scan, 
+						"Enter the name of the second persona (first letter of each word capitalized): ", fd);
+
+				if (persona1 != null && persona2 != null) {
+					printFusionResult(fd, persona1, persona2);
+				}
+			} else if (input.equals("m")) { // print the menu
+				printMenu();
+			} else if (input.equals("l")) { // print the related fusions of a persona
+				Persona persona = getValidPersonaName(scan, 
+						"Enter the name of a persona (first letter capitalized): ", fd);
+
+				if (persona != null) {
+					printRelatedFusions(persona, fd);
+				}
+			} else if (input.equals("k")) { // print the abbreviation key
+				printAbbreviationKey();
+			} else if (input.equals("q")) { // quit the program
+				scan.close();
+				return;
+			} else { // invalid input
+				System.out.println("Invalid command");
+			}
+		}
+	}
+	
+	/**
+	 * returns the valid name of an persona based on user input. If the user decides to quit,
+	 * returns an empty string.
+	 * 
+	 * @param scan The Scanner from which input will be read
+	 * @param userPrompt The message that prompts the user to input a persona name
+	 * @param fd The FusionGraphData for this particular run of the program
+	 * @return a valid persona name if the user provides one, or "" if the user decides to quit back
+	 *         to the menu to choose another option
+	 */
+	private static Persona getValidPersonaName(Scanner scan, String userPrompt, FusionDataGraph fd) {
+		System.out.println(userPrompt);
+
+		boolean invalidName = true;
+		while (invalidName) {
+			String input = scan.nextLine();
+			Persona p = fd.getPersona(input);
+
+			if (input.equals("b")) {
+				invalidName = false;
+			} else if (p == null) {
+				System.out.println("Invalid persona name. Enter another name or b to go back to main menu: ");
+			} else { // valid name; print out the fusions p is an ingredient in
+				return p;
+			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * returns the valid name of an arcana based on user input. If the user decides to quit,
+	 * returns an empty string.
+	 * 
+	 * @param scan The Scanner from which input will be read
+	 * @param userPrompt The prompt to the user to input an arcana name
+	 * @param fd The FusionGraphData for this particular run of the program
+	 * @return a valid arcana name if the user provides one, or "" if the user decides to quit back
+	 *         to the menu to choose another option
+	 */
+	private static String getValidArcanaName(Scanner scan, String userPrompt, FusionDataGraph fd) {
+		Set<String> arcana = fd.getAllArcana();
+
+		System.out.print(userPrompt);
+
+		boolean invalidName = true;
+		while (invalidName) {
+			String input = scan.nextLine();
+
+			if (input.equals("b")) {
+				invalidName = false;
+			} else if (!arcana.contains(input)) {
+				System.out.print("Invalid arcana name. Enter another name or b to go back to main menu: ");
+			} else { // valid name; print out the information of each persona in the user-specified arcana
+				return input;
+			}
+		}
+
+		return "";
+	}
+
+	/**
+	 * configures the program according to whether the user wants to include dlc persona
+	 * in the fusion calculations or not
+	 * 
+	 * @param scan The Scanner from which input will be read
+	 * @param fd The FusionGraphData for this particular run of the program
+	 * @return a FusionDataGraph that has been configured to either use dlc persona
+	 *         in the fusion calculations or not use dlc persona
+	 */
+	private static FusionDataGraph askForDLC(Scanner scan, FusionDataGraph fd) {
 		boolean invalidInput = true;
 		while (invalidInput) {
 			System.out.print("Include DLC personas? Answer y or n: ");
@@ -59,144 +198,7 @@ public class FusionCalculator {
 			}
 		}
 
-		printMenu();
-
-		// until the user quits the program, keep prompting for a commands and execute them if
-		// the user inputs valid commands
-		while (true) {
-			System.out.print("\nPlease enter i, a, p, f, r, k, q, or m for menu: ");
-
-			String input = scan.nextLine();
-			if (input.equals("i")) { // print a short description of Persona 5, personas and fusion
-				printDescription();
-			} else if (input.equals("s")) { // print information about a specific persona
-				System.out.print("Enter the name of a persona (first letter capitalized): ");
-
-				boolean invalidName = true;
-				while (invalidName) {
-					input = scan.nextLine();
-					Persona p = fd.getPersona(input);
-
-					if (input.equals("b")) {
-						invalidName = false;
-					} else if (p == null) {
-						System.out.println("Invalid persona name. Enter another name or b to go back to main menu: ");
-					} else { // valid name; print out the info of the user-specified persona
-						printPersonaInfo(p);
-
-						invalidName = false;
-					}
-				}
-			} else if (input.equals("a")) { // print a list of the 20 arcana
-				printArcana(fd);
-			} else if (input.equals("p")) { // print all the persona in a specified arcana
-				Set<String> arcana = fd.getAllArcana();
-
-				System.out.print("Enter the name of an arcana (first letter capitalized): ");
-
-				boolean invalidName = true;
-				while (invalidName) {
-					input = scan.nextLine();
-
-					if (input.equals("b")) {
-						invalidName = false;
-					} else if (!arcana.contains(input)) {
-						System.out.print("Invalid arcana name. Enter another name or b to go back to main menu: ");
-					} else { // valid name; print out the information of each persona in the user-specified arcana
-						List<Persona> personas = fd.getArcPersonas(input);
-						System.out.println("There are " + personas.size() + " personas in the " + input + " arcana:");
-						for (int i = 0; i < personas.size(); i++) {
-							printPersonaInfo(personas.get(i));
-							if (i != personas.size() - 1) {
-								System.out.println();
-							}
-						}
-
-						invalidName = false;
-					}
-				}
-			} else if (input.equals("f")) { // print a list of all the possible fusions to a specific persona
-				System.out.print("Enter the name of a persona (first letter capitalized): ");
-
-				boolean invalidName = true;
-				while (invalidName) {
-					input = scan.nextLine();
-					Persona p = fd.getPersona(input);
-
-					if (input.equals("b")) {
-						invalidName = false;
-					} else if (p == null) {
-						System.out.println("Invalid persona name. Enter another name or b to go back to main menu: ");
-					} else if (p.getSpecialCase().equals("guillotine")) {
-						printGuillotineFusion(fd, input);
-
-						invalidName = false;
-					} else { // valid name; print out the pairs that fuse into the user-specified persona
-						printFusionPairs(fd, input);
-
-						invalidName = false;
-					}
-				}
-			} else if (input.equals("r")) { // print the resulting persona of a fusion between two specific persona
-				System.out.print("Enter the name of the first persona (first letter capitalized): ");
-
-				boolean invalidName = true;
-				while (invalidName) {
-					input = scan.nextLine();
-					Persona p1 = fd.getPersona(input);
-
-					if (input.equals("b")) {
-						invalidName = false;
-					} else {
-						System.out.print("Enter the name of the second persona (first letter capitalized): ");
-						input = scan.nextLine();
-						Persona p2 = fd.getPersona(input);
-
-						if (p1 == null || p2 == null) {
-							System.out.print("Invalid persona name(s). Enter the name of the first persona or b to go back to main menu: ");
-						} else { // valid name; print out the info of the user-specified persona
-							printFusionResult(fd, p1, p2);
-
-							invalidName = false;
-						}
-					}
-				}
-			} else if (input.equals("m")) { // print the menu
-				printMenu();
-			} else if (input.equals("l")) { // print the related fusions of a persona
-				System.out.print("Enter the name of a persona (first letter capitalized): ");
-
-				boolean invalidName = true;
-				while (invalidName) {
-					input = scan.nextLine();
-					Persona p = fd.getPersona(input);
-
-					if (input.equals("b")) {
-						invalidName = false;
-					} else if (p == null) {
-						System.out.println("Invalid persona name. Enter another name or b to go back to main menu: ");
-					} else { // valid name; print out the fusions p is an ingredient in
-						System.out.println("Fusions " + p.getName() + " is an ingredient persona in:");
-
-						Set<String> ingredients = fd.getIncludedFusions(p.getName());
-						Iterator<String> itr = ingredients.iterator();
-						while (itr.hasNext()) {
-							String s = itr.next();
-							printFusionResult(fd, p, fd.getPersona(s));
-						}
-
-						invalidName = false;
-					}
-				}
-			} else if (input.equals("k")) { // print the abbreviation key
-				printAbbreviationKey();
-			} else if (input.equals("q")) { // quit the program
-				scan.close();
-				return;
-			} else { // invalid input
-				System.out.println("Invalid command");
-			}
-		}
+		return fd;
 	}
 
 	/**
@@ -257,12 +259,12 @@ public class FusionCalculator {
 	 * prints the ingredient personas of a guillotine fusion for the persona input
 	 * 
 	 * @param fd The FusionDataGraph from which data will be drawn
-	 * @param input The resulting persona for which the guillotine fusion will be printed
+	 * @param personaName The resulting persona for which the guillotine fusion will be printed
 	 */
-	private static void printGuillotineFusion(FusionDataGraph fd, String input) {
-		List<String> ingredientPersonas = fd.getGuillotineFusion(input);
+	private static void printGuillotineFusion(FusionDataGraph fd, String personaName) {
+		List<String> ingredientPersonas = fd.getGuillotineFusion(personaName);
 
-		System.out.print("Guillotine Fusion for " + input + ": " + ingredientPersonas.get(0));
+		System.out.print("Guillotine Fusion for " + personaName + ": " + ingredientPersonas.get(0));
 		for (int i = 1; i < ingredientPersonas.size(); i++) {
 			System.out.print(", " + ingredientPersonas.get(i));
 		}
@@ -273,14 +275,14 @@ public class FusionCalculator {
 	 * Name of p1 (base level of p1 / arcana of p1) x Name of p2 (base level of p2 / arcana of p2)
 	 * 
 	 * @param fd The FusionDataGraph from which data will be drawn
-	 * @param input The persona for which the fusions pairs will be printed
+	 * @param personaName The persona for which the fusions pairs will be printed
 	 */
-	private static void printFusionPairs(FusionDataGraph fd, String input) {
-		List<Pair> fusions = fd.getFusions(input);
+	private static void printFusionPairs(FusionDataGraph fd, String personaName) {
+		List<Pair> fusions = fd.getFusions(personaName);
 		if (fusions == null) { // the user-specified persona is a treasure demon; no possible fusions
 			System.out.println("Treasure demons cannot be fused.");
 		} else {
-			System.out.println(fusions.size() + " fusions for " + input + ":");
+			System.out.println(fusions.size() + " fusions for " + personaName + ":");
 			for (int i = 0; i < fusions.size(); i++) {
 				Persona p1 = fusions.get(i).getP1();
 				Persona p2 = fusions.get(i).getP2();
@@ -310,6 +312,41 @@ public class FusionCalculator {
 		}
 	}
 
+	/**
+	 * prints all the personas in the specified arcana
+	 * 
+	 * @param arcana The arcana for which all the personas will be printed
+	 * @param fd The FusionGraphData for this particular run of the program
+	 */
+	private static void printPersonasInArcana(String arcana, FusionDataGraph fd) {
+		List<Persona> personas = fd.getArcPersonas(arcana);
+		System.out.println("There are " + personas.size() + " personas in the " + arcana + " arcana:");
+		for (int i = 0; i < personas.size(); i++) {
+			printPersonaInfo(personas.get(i));
+			if (i != personas.size() - 1) {
+				System.out.println();
+			}
+		}
+	}
+
+	/**
+	 * prints all the fusions that include the specified persona as one of the ingredient
+	 * personas
+	 * 
+	 * @param persona The persona for which the related fusions will be printed
+	 * @param fd The FusionGraphData for this particular run of the program
+	 */
+	private static void printRelatedFusions(Persona persona, FusionDataGraph fd) {
+		System.out.println("Fusions " + persona.getName() + " is an ingredient persona in:");
+
+		Set<String> ingredients = fd.getIncludedFusions(persona.getName());
+		Iterator<String> itr = ingredients.iterator();
+		while (itr.hasNext()) {
+			String s = itr.next();
+			printFusionResult(fd, persona, fd.getPersona(s));
+		}
+	}
+	
 	/**
 	 * prints the menu
 	 */
